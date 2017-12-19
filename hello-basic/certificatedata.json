@@ -1,0 +1,14 @@
+{
+    "certs": [
+        {
+            "fingerprint": "b520c3a5636a79c7791a9ddf41ef445e0207dbfb19f6c0652f743b8005678fe7",
+            "subjectRDN": "CN=Geely Global Test Root CA, OU=Geely Automobile Holdings Ltd, O=Zhejiang Geely Holding Group Co.\u001e Ltd, L=Hangzhou, ST=Zhejiang, C=CN",
+            "issuerRDN": "CN=Geely Global Test Root CA, OU=Geely Automobile Holdings Ltd, O=Zhejiang Geely Holding Group Co.\u001e Ltd, L=Hangzhou, ST=Zhejiang, C=CN",
+            "serialNumber": 13509902,
+            "issueDate": 1474430384,
+            "expireDate": 3082766384,
+            "revocationDate": -1,
+            "status": "NEW"
+        }
+    ]
+}

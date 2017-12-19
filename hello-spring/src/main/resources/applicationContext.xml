@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+<!-- 	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver">
+		</property>
+		<property name="url" value="jdbc:postgresql://192.168.88.128:5432/ericsson.li">
+		</property>
+		<property name="username" value="ericsson.li"></property>
+		<property name="password" value="ericsson.li"></property>
+	</bean> -->
+<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+     init-method="init" destroy-method="close">
+     <property name="url" value="jdbc:postgresql://172.21.38.22:5432/csp_tsg_db" />
+     <property name="username" value="tscdba" />
+     <!-- <property name="password" value="ericsson" /> -->
+     <property name="password" value="QigHpbdSZBBgK5dSNmen67z9EjJwMqtYkJEHQtsDUpRtJ0nsvJUBQmkcQBSGucLc10q97HLHrnSFqjqPnyknpg==" />
+     <property name="filters" value="config" />
+     <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKM6P0NOJWC922jTONTtduziIn6afrUoBbKH9+eqc6QoDbxRYWIj9h1A7WKKIv7qSSlESJ+2Z1TQ4pxViele2dECAwEAAQ==" />
+</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id = "userDao" class="com.ericsson.li.HelloJdbcTemplate.UserDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+		<bean id = "studentDao" class="com.ericsson.li.HelloJdbcTemplate.StudentDao">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+		<bean id = "userDao2" class="com.ericsson.li.HelloJdbcTemplate.UserDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+</beans>
