@@ -3,8 +3,8 @@ package com.ericsson.li.type;
 public class HexTest {
 	
 	public static void main(String[] args) {
-		//test16Str();
-		System.out.println(convertHexToString("4c3654579334340d38484e8b30305332739a6afe766e766f").length());
+		test16Str();
+		System.out.println(convertHexToString("4c3654579334340d38484e8b30305332739a6afe766e766f"));
 	}
 	
 	 /**
@@ -43,7 +43,7 @@ public class HexTest {
         byte[] d = new byte[length];
         for (int i = 0; i < length; i++) {
             int pos = i * 2;
-            d[i] = (byte) (charToByte(hexChars[pos]) << 4 | charToByte(hexChars[pos + 1]));
+            d[i] = (byte) (hexcharToint(hexChars[pos]) << 4 | hexcharToint(hexChars[pos + 1]));
         }
         return d;
     }
@@ -52,8 +52,8 @@ public class HexTest {
      * @param c char
      * @return byte
      */
-     private static byte charToByte(char c) {
-        return (byte) "0123456789ABCDEF".indexOf(c);
+     private static int hexcharToint(char c) {
+        return "0123456789ABCDEF".indexOf(c);
     }
      
     private static void test16Str() {
@@ -68,8 +68,23 @@ public class HexTest {
     	System.out.println(hexStringToBytes2("2B387"));
     	System.out.println(hexStringToBytes2("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"));
     	
+    	System.out.println(hexStringToBytes2("4c365457KKK9334340d38484e8b30305332739a6afe766e766f"));
     	System.out.println(hexStringToBytes2("4c3654579334340d38484e8b30305332739a6afe766e766f"));
+    	
     	System.out.println(hexStringToBytes2("4c3654579334340d38484e8b30305332739a6afe766e766f"));
+    	
+    	System.out.println("2abc".matches("^([0-9|a-f|A-F]*)$"));
+    	System.out.println("-2abc".matches("^([0-9|a-f|A-F]*)$"));
+    	
+    	System.out.println("2abcf".matches("^([0-9|a-f|A-F]*)$"));
+    	System.out.println("2abcg".matches("^([0-9|a-f|A-F]*)$"));
+    	
+    	//31353961626a6b78797a =>159abjkxyz
+    	System.out.println(hexStringToString("31353961626A6B78797A"));
+    	System.out.println(hexStringToString("31353961626A6B78797"));
+    	System.out.println(hexStringToString("31GG3961626A6B78797A"));
+    	
+    	
     	
     }
     
@@ -83,7 +98,7 @@ public class HexTest {
         byte[] d = new byte[length];
         for (int i = 0; i < length; i++) {
             int pos = i * 2;
-            d[i] = (byte) (charToByte(hexChars[pos]) << 4 | charToByte(hexChars[pos + 1]));
+            d[i] = (byte) (hexcharToint(hexChars[pos]) << 4 | hexcharToint(hexChars[pos + 1]));
         }
         return d;
     }
@@ -99,7 +114,7 @@ public class HexTest {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < length; i++) {
             int pos = i * 2;
-            char a = (char) (charToByte(hexChars[pos]) << 4 | charToByte(hexChars[pos + 1]));
+            char a = (char) (hexcharToint(hexChars[pos]) << 4 | hexcharToint(hexChars[pos + 1]));
             sb.append(a);
         }
         return sb.toString();
@@ -126,5 +141,37 @@ public class HexTest {
     
         return sb.toString();  
         }  
-  
+
+	public static void isHexTest(String hex) {
+		String regex = "^[A-Fa-f0-9]{4}|[A-Fa-f0-9]{7}$";
+		String s = "123b123";
+		if (hex.matches(regex)) {
+			System.out.println(s.toUpperCase() + "是4位或者7位16进制数");
+		} else {
+			System.out.println(s.toUpperCase() + "不是4位或者7位16进制数");
+		}
+		//return hex.matches("[A-Fa-f0-9]");
+		
+	}
+	
+    public static String hexStringToString(String hexString) {
+        if (hexString == null || hexString.equals("")) {
+            return null;
+        }
+        hexString = hexString.toUpperCase();
+        int length = hexString.length() / 2;
+        char[] hexChars = hexString.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            int pos = i * 2;
+            int v1 = hexcharToint(hexChars[pos]);
+            int v2 = hexcharToint(hexChars[pos + 1]);
+            if (v1 == -1 | v2 == -1) {
+            	break;
+            }
+            char a = (char) (v1 << 4 | v2);
+            sb.append(a);
+        }
+        return sb.toString();
+    }
 }
