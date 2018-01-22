@@ -18,9 +18,11 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 public class JMSProducer {
 
     //默认连接用户名
-    private static final String USERNAME = ActiveMQConnection.DEFAULT_USER;
+    //private static final String USERNAME = ActiveMQConnection.DEFAULT_USER;
     //默认连接密码
-    private static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
+    //private static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;
+    private static final String USERNAME = "user";
+    private static final String PASSWORD = "password";
     
     private static final String queue = "HelloWorld";
     //默认连接地址
@@ -42,7 +44,7 @@ public class JMSProducer {
         //消息生产者
         MessageProducer messageProducer;
         //实例化连接工厂
-        connectionFactory = new ActiveMQConnectionFactory(JMSProducer.USERNAME, JMSProducer.PASSWORD, JMSProducer.BROKEURL);
+        connectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD, BROKEURL);
 
         try {
             //通过连接工厂获取连接

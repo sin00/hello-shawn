@@ -14,10 +14,11 @@ import org.apache.activemq.broker.BrokerService;
  * @see  [相关类/方法] 
  * @since  [产品/模块版本] 
  */  
-public class RunningBroker {  
+public class MqttBroker {  
     public static void main(String[] args){  
         try {  
             codeByRunning() ;  //启动Broker  
+        	//factoryByRunning();
         } catch (Exception e) {  
             e.printStackTrace();  
         }  
@@ -33,8 +34,8 @@ public class RunningBroker {
     public static void codeByRunning() throws Exception{  
         BrokerService broker =new BrokerService();  
         broker.setBrokerName("testName");//如果启动多个Broker时，必须为Broker设置一个名称  
-        broker.addConnector("tcp://localhost:61616");  
-        //broker.addConnector("mqtt://localhost:61616");
+        
+        broker.addConnector("tcp://localhost:61616");
         //broker.addConnector(ActiveMQConnection.DEFAULT_BROKER_URL);
         broker.start();  
     }  

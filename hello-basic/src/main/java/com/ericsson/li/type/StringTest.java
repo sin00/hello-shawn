@@ -411,6 +411,18 @@ public class StringTest {
 		System.out.println("enginNo=" + enginNo);		
 	}
 	
+	public static void testMsisdn() {
+		//char a = '★';
+		//String keyWords = "861111|+861111|861112";
+		String keyWords = "";
+		
+		
+		System.out.println(keyWords.contains("861111"));
+		System.out.println(keyWords.contains("+861111"));
+		System.out.println(keyWords.contains("+861112"));
+		System.out.println(keyWords.contains("+861113"));
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -419,7 +431,8 @@ public class StringTest {
 		a = "world";
 		System.out.println(a.substring(a.length()-1));
 		System.out.println(b);
-		testEngineNo();
+		testMsisdn();
+		//testEngineNo();
 		//testDelete();
 		//testAllIsChar();
 		//testContain();

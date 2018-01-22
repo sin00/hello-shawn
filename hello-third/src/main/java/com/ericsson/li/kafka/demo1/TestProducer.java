@@ -34,7 +34,7 @@ public class TestProducer {
          //  flush() ;所有缓存记录被立刻发送
          for(int i = 0; i < 100; i++) {
         	 //这里平均写入４个分区
-             producer.send(new ProducerRecord<String, String>("foo",i%4, Integer.toString(i), Integer.toString(i)));
+             producer.send(new ProducerRecord<String, String>("foo",i%4, Integer.toString(i), "hhh" + Integer.toString(i)));
              producer.close();
          }
     }

@@ -18,8 +18,10 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 public class JMSConsumer {
 
 	//Active-MQ
-    private static final String USERNAME = ActiveMQConnection.DEFAULT_USER;//默认连接用户名
-    private static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;//默认连接密码
+    //private static final String USERNAME = ActiveMQConnection.DEFAULT_USER;//默认连接用户名
+   // private static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;//默认连接密码
+    private static final String USERNAME = "user";
+    private static final String PASSWORD = "password";
     //private static final String BROKEURL = ActiveMQConnection.DEFAULT_BROKER_URL;//默认连接地址
     //private static final String BROKEURL = "tcp://192.168.88.128:61616";
     private static final String BROKEURL = "tcp://localhost:61616";
@@ -40,7 +42,7 @@ public class JMSConsumer {
         MessageConsumer messageConsumer;//消息的消费者
 
         //实例化连接工厂
-        connectionFactory = new ActiveMQConnectionFactory(JMSConsumer.USERNAME, JMSConsumer.PASSWORD, JMSConsumer.BROKEURL);
+        connectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD, BROKEURL);
 
         try {
             //通过连接工厂获取连接
