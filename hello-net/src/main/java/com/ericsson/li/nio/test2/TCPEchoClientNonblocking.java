@@ -7,14 +7,17 @@ import java.nio.channels.SocketChannel;
   
 public class TCPEchoClientNonblocking {  
     public static void main(String args[]) throws Exception{  
-        if ((args.length < 2) || (args.length > 3))   
+/*        if ((args.length < 2) || (args.length > 3))   
         throw new IllegalArgumentException("参数不正确");  
         //第一个参数作为要连接的服务端的主机名或IP  
         String server = args[0];   
         //第二个参数为要发送到服务端的字符串  
         byte[] argument = args[1].getBytes();  
         //如果有第三个参数，则作为端口号，如果没有，则端口号设为7  
-        int servPort = (args.length == 3) ? Integer.parseInt(args[2]) : 7;  
+        int servPort = (args.length == 3) ? Integer.parseInt(args[2]) : 7;  */
+    	String server = "localhost";
+    	byte[] argument = "hello".getBytes(); 
+    	int servPort = 9002;
         //创建一个信道，并设为非阻塞模式  
         SocketChannel clntChan = SocketChannel.open();  
         clntChan.configureBlocking(false);  

@@ -22,6 +22,7 @@
 		<cassandra.version>3.0.0</cassandra.version>
 		<redis.version>2.9.0</redis.version>
 		<ibmmq.version>7.5.0</ibmmq.version>
+		<javassist.version>3.12.1.GA</javassist.version>
 	</properties>
 
 	<dependencies>
@@ -168,6 +169,22 @@
 			<artifactId>hbase-client</artifactId>
 			<version>${hbase.version}</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javassist/javassist -->
+<dependency>
+    <groupId>javassist</groupId>
+    <artifactId>javassist</artifactId>
+    <version>${javassist.version}</version>
+</dependency>
+		
+		
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.8-dmr</version>
+</dependency>
+		
 
 		<dependency>
 			<groupId>junit</groupId>

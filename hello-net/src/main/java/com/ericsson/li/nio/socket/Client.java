@@ -20,7 +20,7 @@ public class Client implements Runnable{
      
     public static void main(String[] args) {      
         //种多个线程发起Socket客户端连接请求
-        for(int i=0; i<1; i++){
+        for(int i=0; i<2; i++){
             Client c = new Client();
             c.init();
             new Thread(c).start();
@@ -35,7 +35,7 @@ public class Client implements Runnable{
             channel = SocketChannel.open();
             channel.configureBlocking(false);
             //请求连接
-            channel.connect(new InetSocketAddress("localhost", 8383));
+            channel.connect(new InetSocketAddress("localhost", 9001));
             selector = Selector.open();
             channel.register(selector, SelectionKey.OP_CONNECT);
             boolean isOver = false;

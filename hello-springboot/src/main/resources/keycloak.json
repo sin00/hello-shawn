@@ -1,0 +1,11 @@
+{
+  "auth-server-url": "http://192.168.88.128:8080/auth",
+  "realm": "demo",
+  "public-client": true,
+   "resource": "hello-springboot",
+   "security-constraints[0].authRoles[0]": "testuser",
+   "security-constraints[0].securityCollections[0].patterns[0]": "/hello",
+  "bearer-only": true,
+  "ssl-required": "external",
+  "enable-cors": true
+}

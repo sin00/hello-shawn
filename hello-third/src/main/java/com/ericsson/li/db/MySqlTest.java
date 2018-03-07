@@ -17,13 +17,13 @@ public class MySqlTest {
 		String driver = "com.mysql.jdbc.Driver";
 
 		// URLָ��Ҫ���ʵ���ݿ���scutcs
-		String url = "jdbc:mysql://172.20.33.21:3306/rapdb";
-
+		//String url = "jdbc:mysql://172.20.33.21:3306/rapdb";
+		String url = "jdbc:mysql://192.168.88.128:3306/test";
 		// MySQL����ʱ���û���
-		String user = "rap";
+		String user = "root";
 
 		// MySQL����ʱ������
-		String password = "rap";
+		String password = "root";
 
 		try {
 			// ���������
@@ -41,7 +41,7 @@ public class MySqlTest {
 			Statement statement = conn.createStatement();
 
 			// Ҫִ�е�SQL���
-			String sql = "select * from bam_idx_def";
+			String sql = "select * from test";
 
 			// ���
 			ResultSet rs = statement.executeQuery(sql);

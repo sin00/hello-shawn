@@ -9,7 +9,7 @@ public class WebServer {
 		while (true) {
 		ServerSocket server = new ServerSocket(9999);
 		Socket sock = server.accept();
-		FileInputStream in = new FileInputStream("e:\\aa.xml");
+		FileInputStream in = new FileInputStream("C:/workspace/test/webtest/helloworld.txt");
 		OutputStream out = sock.getOutputStream();
 		
 		int len = 0;
