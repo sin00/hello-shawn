@@ -39,7 +39,7 @@ class Person {
      * sombody() 被 @MyAnnotation(value={"girl","boy"}) 所标注，
      * @MyAnnotation(value={"girl","boy"}), 意味着MyAnnotation的value值是{"girl","boy"}
      */
-    @MyAnnotation(value={"girl","boy"})
+    @MyAnnotation(value={"girl","boy", "hh"})
     public void somebody(String name, int age){
         System.out.println("\nsomebody: "+name+", "+age);
     }
@@ -65,6 +65,9 @@ public class AnnotationTest {
         // 执行该方法
         mEmpty.invoke(person, new Object[]{});        
         iteratorAnnotations(mEmpty);
+        
+        person.somebody("lily", 18);
+        person.empty();
     }
     
     public static void iteratorAnnotations(Method method) {
