@@ -24,16 +24,15 @@ public class TestCglib {
         Callback noopCb=NoOp.INSTANCE;  
         Callback callback1=new TargetInterceptor();  
         Callback fixedValue=new TargetResultFixed();  
-        Callback[] cbarray=new Callback[]{callback1,noopCb,fixedValue};  
-        //enhancer.setCallback(new TargetInterceptor());  
+        Callback[] cbarray=new Callback[]{callback1,noopCb,fixedValue};
         enhancer.setCallbacks(cbarray);  
-        enhancer.setCallbackFilter(callbackFilter);  
+        enhancer.setCallbackFilter(callbackFilter);
         TargetObject targetObject2=(TargetObject)enhancer.create();  
-        System.out.println(targetObject2);  
-        System.out.println(targetObject2.method1("mmm1"));  
-        System.out.println(targetObject2.method2(100));  
-        System.out.println(targetObject2.method3(100));  
-        System.out.println(targetObject2.method3(200));
+        System.out.println("=>" + targetObject2);
+        System.out.println("=>" + targetObject2.method1("mmm1"));
+        System.out.println("=>" + targetObject2.method2(100));
+        System.out.println("=>" + targetObject2.method3(100));
+        System.out.println("=>" + targetObject2.method3(200));
 	}
 
 	private static void testInterceptor() {

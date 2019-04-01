@@ -13,7 +13,10 @@ public class VehicalInvacationHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("--before running...");
-        Object ret = method.invoke(vehical, args);
+        Object ret = null;
+        ret = method.invoke(vehical, args);
+        //((IVehical)proxy).run(); error
+        //ret = method.invoke(proxy, args); error
         System.out.println("--after running...");
 
         return ret;
