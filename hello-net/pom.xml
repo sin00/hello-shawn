@@ -30,7 +30,7 @@
 			<artifactId>logback-core</artifactId>
 			<version>${logback.version}</version>
 			<type>jar</type>
-			<scope>compile</scope>
+			<scope>compile</scope> 
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>

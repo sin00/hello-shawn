@@ -1,4 +1,4 @@
-package com.ericsson.li.aop;
+package com.ericsson.li.proxy.aop;
 
 public class RegisterService {
 	public boolean regist(String name) {

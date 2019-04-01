@@ -1,0 +1,25 @@
+{
+    "frameData":${frameData},
+    "frameDataPretty":${frameDataPretty},
+    "frameLength":${frameLength},
+    "frameLengthReverse":${frameLengthReverse},
+    "stringTail":${stringTail},
+    "frameAck":${frameAckStr},
+    "launch":
+    {
+        "frameFlag":${frameFlag},
+        "businessID":${businessID},
+        "businessAckID":${businessAckID},
+        "data":
+        {
+            "aa":${aa},
+            "bb":${bb},
+            "cc":${cc},
+            "dd":${dd},
+        },
+        "frameTail":${frameTail}
+    }
+
+        "frameDataReadable":${frameDataReadable},
+        "frameDataReadablePretty":${frameDataReadablePretty},
+}

@@ -1,0 +1,25 @@
+SrcBlock = ByteUtil.newByteBlock(SrcBytes);
+frameFlag = SrcBlock.readHexBytes(2);
+frameLength = SrcBlock.readU16();
+frameLengthReverse = SrcBlock.swapShort(frameLength);
+SrcBlock.skip(2);
+businessID = SrcBlock.readU16();
+businessAckID = SrcBlock.readU16();
+bodyBlock = SrcBlock.readBlock(frameLength-12);
+frameTail = SrcBlock.readHexBytes(4);
+frameData = SrcBlock.hexDump();
+frameDataPretty = SrcBlock.prettyHexDump();
+frameDataReadable = SrcBlock.hexDumpReadable();
+frameDataReadablePretty = SrcBlock.prettyHexDumpReadable();
+
+stringTail = SrcBlock.getString(SrcBlock.getCapacity() - SrcBlock.readableBytes(), SrcBlock.readableBytes());
+dd = "ddddddddd";
+xxxx = SrcBlock.getBytes(0, 10);
+jexl("aa-body");
+jexl("aa-ack");
+frameAckStr = frameAck.toByteBlock().hexDump();
+
+jxlt("aa-out");
+
+haha(true);
+haha(false);

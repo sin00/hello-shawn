@@ -1,0 +1,21 @@
+FieldOPR.parseJBBP("launch-header");
+FieldOPR.parseJBBP("launch-body", FieldOPR.get("businessdata"));
+aa = FieldOPR.get("aa");
+bb = FieldOPR.get("bb");
+FieldOPR.put("sum", aa + bb);
+division = 0;
+if (bb > aa) {
+    division = bb / aa + 10;
+} else {
+    division = aa / bb - 1000;
+}
+var dd=aa;
+kk = bb;
+JCOPR.put("ee", 100);
+FieldOPR.put("division", division);
+FieldOPR.put("cc", Function.bytesToHexString(FieldOPR.get("cc")));
+FieldOPR.put("frameflag", Function.bytesToHexString(FieldOPR.get("frameflag")));
+FieldOPR.put("frametail", Function.bytesToHexString(FieldOPR.get("frametail")));
+ff = ee * 2;
+
+

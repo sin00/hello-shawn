@@ -10,7 +10,7 @@ import org.dom4j.io.SAXReader;
 import org.junit.Test;
 
 public class XmlTest {
-	@Test  
+
 	public void testGetRoot() throws Exception{  
 	    SAXReader sax=new SAXReader();//创建一个SAXReader对象  
 	    //File xmlFile=new File("E:/workspace/test/xmltest.xml");//根据指定的路径创建file对象  

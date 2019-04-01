@@ -1,11 +1,12 @@
 package com.ericsson.li.junit;
 
+
+
+import com.ericsson.li.type.StringTest;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.ericsson.li.type.StringTest;
 
 public class StringTestJunit {
 	@Before

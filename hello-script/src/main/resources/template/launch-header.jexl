@@ -1,0 +1,9 @@
+frameFlag = SrcBlock.readHexBytes(2);
+frameLength = SrcBlock.readU16();
+SrcBlock.skip(2);
+businessID = SrcBlock.readU16();
+businessAckID = SrcBlock.readU16();
+bodyBlock = SrcBlock.readBlock(frameLength-12);
+//bodyData = SrcBlock.readBytes(frameLength-12);
+frameTail = SrcBlock.readHexBytes(4);
+Engine.parse("launch-body", JexlContext);

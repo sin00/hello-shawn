@@ -24,7 +24,7 @@
 		<dbcp.version>1.4</dbcp.version>
 		<zookeeper.version>3.4.6</zookeeper.version>
 		<zkclient.version>0.1</zkclient.version>
-	</properties>
+	</properties> 
 
 	<dependencies>
 		<dependency>

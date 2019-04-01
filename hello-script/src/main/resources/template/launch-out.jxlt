@@ -1,0 +1,21 @@
+$$ aaaa = fields['aa'] * 3;
+{
+    "launch":
+    {
+        "frameFlag":${fields['frameflag']},
+        "businessID":${fields['businessid']},
+        "businessAckID":${fields['businessackid']},
+        "data":
+        {
+        $$if(fields['aa'] == 1){
+                "requestid": ${aaaa},
+        $$}
+            "aa":${fields['aa']},
+            "bb":${fields['bb']},
+            "sum":${fields['sum']},
+            "division":${fields['division']},
+            "cc":${fields['cc']},
+        },
+        "frameTail":${fields['frametail']}
+    }
+}

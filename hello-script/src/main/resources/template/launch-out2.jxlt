@@ -1,0 +1,15 @@
+{
+    "launch":
+    {
+        "frameFlag":${frameFlag},
+        "businessID":${businessID},
+        "businessAckID":${businessAckID},
+        "data":
+        {
+            "aa":${aa},
+            "bb":${bb},
+            "cc":${cc},
+        },
+        "frameTail":${frameTail}
+    }
+}

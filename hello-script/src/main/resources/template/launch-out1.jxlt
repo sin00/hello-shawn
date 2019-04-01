@@ -1,0 +1,23 @@
+$$ aaaa = aa * 3;
+{
+    "launch":
+    {
+        "frameFlag":${frameflag},
+        "businessID":${businessid},
+        "businessAckID":${businessackid},
+        "data":
+        {
+        $$if(aa == 1){
+                "requestid": ${aaaa},
+        $$}
+            "aa":${aa},
+            "bb":${bb},
+            "sum":${sum},
+            "division":${division},
+            "cc":${cc},
+            "ff":${ff},
+            "ee":${ee}
+        },
+        "frameTail":${'frametail'}
+    }
+}

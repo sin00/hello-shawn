@@ -1,0 +1,14 @@
+frameFlag = srcBlock.readHexBytes(2);
+frameLength = srcBlock.readU16();
+srcBlock.skip(2);
+businessID = srcBlock.readU16();
+businessAckID = srcBlock.readU16();
+bodyBlock = srcBlock.readBlock(frameLength-12);
+frameTail = srcBlock.readHexBytes(4);
+
+bodyBlock.skip(1);
+aa = bodyBlock.readU16();
+bb = bodyBlock.readS16();
+cc = bodyBlock.readHexBytes();
+
+

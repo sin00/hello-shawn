@@ -1,0 +1,7 @@
+byte[2] frameflag;
+ushort framelen;
+skip:2;
+ushort businessid;
+ushort businessackid;
+byte[framelen-12]businessdata;
+byte[4] frametail;

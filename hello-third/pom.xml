@@ -3,6 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
 	<parent>
 		<groupId>com.ericsson.li</groupId>
 		<artifactId>hello-shawn</artifactId>
@@ -23,6 +24,7 @@
 		<redis.version>2.9.0</redis.version>
 		<ibmmq.version>7.5.0</ibmmq.version>
 		<javassist.version>3.12.1.GA</javassist.version>
+		<ignite.version>1.9.0</ignite.version>
 	</properties>
 
 	<dependencies>
@@ -169,6 +171,35 @@
 			<artifactId>hbase-client</artifactId>
 			<version>${hbase.version}</version>
 		</dependency>
+
+		<!-- ftp -->
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.5</version>
+		</dependency>
+		<!-- sftp -->
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>0.1.54</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.ignite</groupId>
+			<artifactId>ignite-core</artifactId>
+			<version>${ignite.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.ignite</groupId>
+			<artifactId>ignite-spring</artifactId>
+			<version>${ignite.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.ignite</groupId>
+			<artifactId>ignite-indexing</artifactId>
+			<version>${ignite.version}</version>
+		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/javassist/javassist -->
 <dependency>
@@ -189,9 +220,10 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
+			<version>4.12</version>
+<!--			<scope>test</scope>-->
 		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>hello-third</finalName>

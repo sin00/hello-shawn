@@ -11,5 +11,8 @@
     <module>hello-net</module>
     <module>hello-spring</module>
     <module>hello-springboot</module>
+    <module>hello-mqtt</module>
+      <module>hello-script</module>
+      <!-- 	<module>transformer</module> -->
   </modules>
 </project>

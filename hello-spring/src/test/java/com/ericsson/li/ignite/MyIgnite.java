@@ -1,3 +1,4 @@
+package com.ericsson.li.ignite;
 
 
 import org.apache.ignite.Ignite;

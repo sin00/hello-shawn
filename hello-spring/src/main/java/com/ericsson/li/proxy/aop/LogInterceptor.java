@@ -1,4 +1,4 @@
-package com.ericsson.li.aop;
+package com.ericsson.li.proxy.aop;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;

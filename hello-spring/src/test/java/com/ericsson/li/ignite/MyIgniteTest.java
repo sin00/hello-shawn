@@ -1,3 +1,4 @@
+package com.ericsson.li.ignite;
 import org.aspectj.lang.annotation.Before;
 import org.junit.Test;
 

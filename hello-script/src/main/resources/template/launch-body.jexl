@@ -1,0 +1,5 @@
+bodyBlock.skip(1);
+aa = bodyBlock.readU16();
+bb = bodyBlock.readS16();
+cc = bodyBlock.readHexBytes();
+

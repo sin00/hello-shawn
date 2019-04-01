@@ -1,0 +1,4 @@
+skip:1;
+ushort aa;
+short bb;
+byte[_] cc;

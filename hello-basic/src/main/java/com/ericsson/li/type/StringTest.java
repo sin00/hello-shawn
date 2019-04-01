@@ -425,7 +425,12 @@ public class StringTest {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		StringBuilder sb = new StringBuilder();
+		sb.append("").append("").append("");
+		System.out.println("sb=" + sb.toString());
+		System.out.println("sb.len=" + sb.length());
+		System.out.println("sb.leng=" + sb.toString().length());
+		
 		String a = "hello";
 		String b = a;
 		a = "world";

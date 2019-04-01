@@ -1,0 +1,113 @@
+$$if(!payload['32767'].equal("102")){
+$$return
+$$}
+$$ requestid = payload['15'] + "_" + handler.timestamp();
+$$ timeStamp = handler.timestamp(payload['206'],payload['207'],"ddMMyyHHmmss");
+$$ startTimeStr = handler.converttimeformat(payload['202'],payload['203'],"ddMMyyHHmmss","yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+$$ endTimeStr = handler.converttimeformat(payload['206'],payload['207'],"ddMMyyHHmmss","yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+$$ tripDurationInMillionsec = handler.timestamp(payload['206'],payload['207'],"ddMMyyHHmmss") - handler.timestamp(payload['202'],payload['203'],"ddMMyyHHmmss");
+$$ tripDuration = handler.dualoperation(tripDurationInMillionsec.toString(),"1000","Divide","Long","0");
+$$ tripDistance = payload['2010'];
+$$ averageSpeed = handler.dualoperation(tripDistance,tripDuration, "Divide", "Double", "2");
+$$ fuelConsumption = handler.dualoperation(payload['20058'],"1000", "Divide", "Double", "2");
+$$ tripDistanceInKM = handler.dualoperation(tripDistance,"1000", "Divide", "Double", "6");
+$$ averageFuelInH = handler.dualoperation(handler.dualoperation(payload['20058'],"1000", "Divide", "Double", "6"), tripDistanceInKM, "Divide", "Double", "6");
+$$ averageFuelCon = handler.dualoperation(averageFuelInH, "100" , "Multiply", "Double", "2") ;
+$$ eventId = handler.getEventId(payload['15'], timeStamp.toString());
+$$ maxSpeed = payload['20008'];//unit: km/h
+$$ maxSpeedInMS = handler.dualoperation(maxSpeed,"3.6", "Divide", "Double", "2");
+$$ usageModeValue = 0;
+$$ if(isCalculated == 0){
+$$      usageModeValue = 1;
+$$   }else{
+$$      usageModeValue = 0;
+$$  }
+$$ fuelLevel = payload['20052'];
+$$ if(fuelLevel != null){
+$$ fuelLevel = handler.dualoperation(fuelLevel,"10", "Divide", "Double", "2");
+$$}
+$$ distanceToService = payload['10025'];
+$$ daysToService = payload['10015'];
+{
+    "header": {
+$$if(requestid!=null){
+        "requestid": "${requestid}",
+$$}			
+        "imei": "${payload['153']}",
+         "imsi": -1,
+        "msisdn": -1, 
+        "vin": "${payload['15']}",
+        "timeStamp": ${timeStamp},
+        "ackRequired":false
+    },             
+    "body": {
+        "Basic": {
+            "position": {
+                "latitude": ${payload['204']},
+                "longitude": ${payload['205']}
+                "altitude": ${payload['290']},
+                "fix":${payload['288']}
+            },
+            "speed":-1,
+            "engineStatus": 1,
+            "mil":-1,
+            "odometer": ${payload['20046']},
+            "usageMode": 0,
+            "basicMetaInfo": {},
+            "timeStamp": ${timeStamp},
+            "keyStatus": 2
+        },
+        "Event": {
+            "tag": "tripEnd",
+            "type": "business",
+            "id": "${eventId}",
+            "name": "tripEnd",
+            "description": "This is a journey end.",
+            "metaInfo": {
+                "type": "JOURNEY",
+                "startTime": "${startTimeStr}",
+                "startPosition": {
+                    "latitude": ${payload['200']},
+                    "longitude": ${payload['201']},
+                    "altitude": ${payload['289']}
+                },
+                "endTime": "${endTimeStr}",
+                "endPosition": {
+                    "latitude": ${payload['204']},
+                    "longitude": ${payload['205']},
+                    "altitude": ${payload['290']}
+                },
+                "distance": ${payload['2010']},
+                "tripTime": ${tripDuration},
+                "maxSpeed": ${maxSpeedInMS},
+                "averageSpeed": ${averageSpeed},
+                "averageFuelConsumption": ${averageFuelCon},
+                "fuelConsumption": ${fuelConsumption},
+                "idleTime": ${payload['216']},
+                "odometer": ${payload['20046']}
+            },
+            "timeStamp": ${timeStamp}
+        },
+        "Running": {
+$$if(fuelLevel != null){
+            "fuelLevel": ${fuelLevel},
+$$}
+            "fuelLevelStatus": -1,
+            "aveFuelConsumption": ${averageFuelCon},
+            "timeStamp": ${timeStamp}
+        },
+        "Maintenance": {
+            "tyreStatusDriver": -1,
+            "tyreStatusPassenger": -1,
+            "tyreStatusDriverRear": -1,
+            "tyreStatusPassengerRear": -1,
+$$if(distanceToService != null){
+            "distanceToService": ${distanceToService},
+$$}
+$$if(daysToService != null){
+            "daysToService": ${daysToService},
+$$}
+            "timeStamp": ${timeStamp}
+        }
+    }
+}

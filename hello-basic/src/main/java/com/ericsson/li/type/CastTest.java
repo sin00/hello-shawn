@@ -12,7 +12,7 @@ public class CastTest {
        	//unicodeTest();
        	//unicodeTest2();
     	//unicodeTest3();
-       	//commonTest();
+       	commonTest();
     }
     
     public static void commonTest() {

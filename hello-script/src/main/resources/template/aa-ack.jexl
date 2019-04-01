@@ -1,0 +1,10 @@
+frameAck = ByteUtil.newByteFrame();
+frameAck.writeShort(0x17);
+frameAck.writeShort(0x12);
+frameAck.writeByte(0x10);
+frameAck.writeByte(0x02);
+frameAck.writeBytes([0xaa, 0xbb, 0xcc]);
+frameAck.writeBuffer(xxxx);
+
+
+###001700121002
