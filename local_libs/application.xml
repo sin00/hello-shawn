@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<reactor:application name="ce6a091f-5f56-48b2-867d-fc543e21cd44_2c9598045ad67039015ad6a8eb150001_alarm" xmlns:reactor="http://www.ericsson.com/reactor/application/v1">
+<reactor:application name="ce6a091f-5f56-48b2-867d-fc543e21cd44_2c9598045ad67039015ad6a8eb150001_alarm" xmlns:reactor="http://www.li.com/reactor/application/v1">
     <description>rms application</description>
     <resourceBundle name="rms-resources-v2" version="1.0-SNAPSHOT"/>
     <rules>

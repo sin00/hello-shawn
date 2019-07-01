@@ -21,7 +21,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">  	
 	
 <!-- 使用MethodInvokingJobDetailFactoryBean，任务类可以不实现Job接口，通过targetMethod指定调用方法 -->  
-    <bean id="taskJob" class="com.ericsson.li.timer.TimerJob" />  
+    <bean id="taskJob" class="com.li.timer.TimerJob" />  
   
     <bean id="jobDetail"  
         class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  

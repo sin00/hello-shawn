@@ -7,7 +7,7 @@
            http://www.springframework.org/schema/context  
            http://www.springframework.org/schema/context/spring-context-2.5.xsd">  
     <context:annotation-config />  
-    <bean id="workDao" class="com.ericsson.li.annotation.WorkerDaoImpl" />  
-    <bean id="studentDao" class="com.ericsson.li.annotation.StudentDaoImpl" />  
-    <bean id="annotationService" class="com.ericsson.li.annotation.AnnotationServiceImpl" />  
+    <bean id="workDao" class="com.li.annotation.WorkerDaoImpl" />  
+    <bean id="studentDao" class="com.li.annotation.StudentDaoImpl" />  
+    <bean id="annotationService" class="com.li.annotation.AnnotationServiceImpl" />  
 </beans> 

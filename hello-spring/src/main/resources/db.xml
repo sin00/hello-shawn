@@ -27,7 +27,7 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	<!-- ###################### dao ###################### -->
-	<bean id="plateInfoDao" class="com.ericsson.li.tool.vrn.PlateInfoDao"
+	<bean id="plateInfoDao" class="com.li.tool.vrn.PlateInfoDao"
 		scope="prototype">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>

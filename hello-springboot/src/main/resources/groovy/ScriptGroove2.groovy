@@ -1,8 +1,8 @@
-package com.ericsson.li.groovy
+package com.li.groovy
 import com.alibaba.fastjson.JSON
 import com.alibaba.fastjson.TypeReference
 
-void hh(Map<Ojbect, Object> map, String a) {
+void hh(Map<Object, Object> map, String a) {
 
 }
  

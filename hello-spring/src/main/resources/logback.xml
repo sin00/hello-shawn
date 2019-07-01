@@ -23,7 +23,7 @@
 		</layout>
 	</appender>
 
-	<logger name="com.ericsson.li">
+	<logger name="com.li">
 		<level value="DEBUGE" />
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="ROOT-FILE" />

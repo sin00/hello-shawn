@@ -87,13 +87,13 @@
         </property>  
     </bean>  
   
-    <bean id="druidTableOperator" class="com.ericsson.li.druid.TableOperator"  
+    <bean id="druidTableOperator" class="com.li.druid.TableOperator"  
         scope="prototype">  
         <property name="dataSource">  
             <ref bean="dataSourceDruid" />  <!-- dataSourceDruid dataSourceDbcp -->
         </property>  
     </bean>  
-       <bean id="dbcpTableOperator" class="com.ericsson.li.druid.TableOperator"  
+       <bean id="dbcpTableOperator" class="com.li.druid.TableOperator"  
         scope="prototype">  
         <property name="dataSource">  
             <ref bean="dataSourceDbcp" />  

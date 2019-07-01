@@ -1,6 +1,6 @@
 package jexl;
 
-import com.ericsson.li.script.LaunchEngine;
+import com.li.script.LaunchEngine;
 import org.apache.commons.jexl3.JexlBuilder;
 import org.apache.commons.jexl3.JexlContext;
 import org.apache.commons.jexl3.JexlEngine;

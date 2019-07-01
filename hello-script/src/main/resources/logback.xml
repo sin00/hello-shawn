@@ -29,7 +29,7 @@
 	</appender>
 
 	
-	<logger name="com.ericsson">
+	<logger name="com.li">
 		<level value="DEBUGE" />
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE" />

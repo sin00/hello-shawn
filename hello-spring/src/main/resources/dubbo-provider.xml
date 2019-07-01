@@ -8,10 +8,10 @@
 						http://code.alibabatech.com/schema/dubbo/dubbo.xsd
 						http://www.springframework.org/schema/context
 						http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-	<dubbo:application name="hellodubbo" owner="hello" organization="ericsson" />
+	<dubbo:application name="hellodubbo" owner="hello" organization="li" />
     <dubbo:registry address="zookeeper://172.21.38.19:2181"/>
 <!-- 	<dubbo:protocol name="rest" port="${dubbo.uploader.port}" contextpath="uploader-backend/services" server="servlet"/> -->
 	<dubbo:protocol name="dubbo" port="20880" />
-	<bean id="helloService" class="com.ericsson.li.dubbo.provider.ProvideServiceImpl" />
-	<dubbo:service interface="com.ericsson.li.dubbo.provider.ProvideService" ref="helloService" validation="false" protocol="rest"/>
+	<bean id="helloService" class="com.li.dubbo.provider.ProvideServiceImpl" />
+	<dubbo:service interface="com.li.dubbo.provider.ProvideService" ref="helloService" validation="false" protocol="rest"/>
 </beans>

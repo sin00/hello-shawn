@@ -38,7 +38,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
            >
 <!-- 	default-lazy-init ="true"  -->
 <!-- 使用MethodInvokingJobDetailFactoryBean，任务类可以不实现Job接口，通过targetMethod指定调用方法 -->  
-<context:component-scan base-package=" com.ericsson.li " /> 
+<context:component-scan base-package=" com.li " /> 
 
 <!-- 	<bean id="configBean"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -55,7 +55,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
             </list>  
         </property>  
     </bean> 
-   <bean id="taskJob" class="com.ericsson.li.task.TaskJob" lazy-init="true" />  
+   <bean id="taskJob" class="com.li.task.TaskJob" lazy-init="true" />  
  <task:scheduled-tasks>   
          <task:scheduled ref="taskJob" method="run" cron="*/3 * * * * ?"/>   
         <task:scheduled ref="taskJob" method="run2" cron="*/2 * * * * ?"/>    

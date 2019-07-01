@@ -17,9 +17,9 @@
            >
 <!-- 	default-lazy-init ="true"  -->
 <!-- 使用MethodInvokingJobDetailFactoryBean，任务类可以不实现Job接口，通过targetMethod指定调用方法 -->  
-<context:component-scan base-package=" com.ericsson.li " /> 
+<context:component-scan base-package=" com.li " /> 
 
 <context:annotation-config/>    
      
-   <bean id="initAndDestroySeqBean" class="com.ericsson.li.inittest.InitAndDestroySeqBean" init-method="initMethod" destroy-method="destroyMethod"/>  
+   <bean id="initAndDestroySeqBean" class="com.li.inittest.InitAndDestroySeqBean" init-method="initMethod" destroy-method="destroyMethod"/>  
 </beans>

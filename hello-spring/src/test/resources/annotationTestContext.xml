@@ -6,5 +6,5 @@
            http://www.springframework.org/schema/context  
            http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 	<context:annotation-config />
-	<context:component-scan base-package="com.ericsson.li.annotationtest"></context:component-scan>
+	<context:component-scan base-package="com.li.annotationtest"></context:component-scan>
 </beans> 

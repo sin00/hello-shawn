@@ -1,4 +1,4 @@
-package com.ericsson.li.groovy
+package com.li.groovy
 
 
 import com.alibaba.fastjson.JSON
